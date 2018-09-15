@@ -2,21 +2,32 @@
 <h1 id="title">Burgers listed</h1>
 
 {{!-- input field and button --}}
-<form class="form-inline">
+<form class="create-form">
   <div class="form-group mx-sm-3 mb-2">
     <label for="burgerName" class="burger">Burger Name</label>
     <input type="text" class="form-control" id="burgerName" placeholder="Burger Name">
   </div>
   
-  <button type="submit" class="btn btn-primary mb-2">Save Burger</button>
+  <button type="submit" class="btn btn-primary mb-2" id="burgerButton">Save Burger</button>
 </form>
 
 
-
-
-
-
-
-
 {{!-- List of burgers below --}}
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{!-- {{> burgers/burgers-block devoured=true}} --}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{!-- {{> burgers/burgers devoured=false}} --}}
+    {{/if}}
+  {{/each}}
+</ul>
+
 
